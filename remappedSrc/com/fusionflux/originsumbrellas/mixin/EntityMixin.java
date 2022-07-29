@@ -28,11 +28,11 @@ public abstract class EntityMixin {
 
 	@Shadow public abstract Box getBoundingBox();
 
-	@Shadow public abstract Iterable<ItemStack> getHandItems();
+	@Shadow public abstract Iterable<ItemStack> getItemsHand();
 
 	@Inject(method = "isBeingRainedOn", at = @At("HEAD"), cancellable = true)
 	private void isBeingRainedOn(CallbackInfoReturnable<Boolean> cir) {
-		Iterable<ItemStack> hands = this.getHandItems();
+		Iterable<ItemStack> hands = this.getItemsHand();
 		for (ItemStack stack : hands) {
 			if (stack.getItem() == UmbrellaItems.UMBRELLA)
 				cir.setReturnValue(false);

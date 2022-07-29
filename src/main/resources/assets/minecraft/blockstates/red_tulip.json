@@ -1,0 +1,16 @@
+{
+    "variants": {
+        "flowers=1": {
+            "model": "minecraft:block/red_tulip"
+        },
+        "flowers=2": {
+            "model": "minecraft:block/two_red_tulip"
+        },
+        "flowers=3": {
+            "model": "minecraft:block/two_red_tulip"
+        },
+        "flowers=4": {
+            "model": "minecraft:block/two_red_tulip"
+        }
+    }
+}

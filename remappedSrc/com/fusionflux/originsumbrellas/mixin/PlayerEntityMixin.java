@@ -22,7 +22,7 @@ public abstract class PlayerEntityMixin extends Entity {
     public abstract ItemStack getEquippedStack(EquipmentSlot slot);
 
     @Shadow
-    public abstract Iterable<ItemStack> getHandItems();
+    public abstract Iterable<ItemStack> getItemsHand();
 
     @Shadow
     public abstract PlayerInventory getInventory();
@@ -36,7 +36,7 @@ public abstract class PlayerEntityMixin extends Entity {
         boolean isBeingRainedOn = ((EntityAccessor) this).callIsBeingRainedOn();
 
         if (isBeingRainedOn && this.age % 10 == 0) {
-            for (ItemStack stack : this.getHandItems()) {
+            for (ItemStack stack : this.getItemsHand()) {
                 if (stack.getItem().equals(UmbrellaItems.UMBRELLA) && stack.getDamage() < stack.getMaxDamage() - 1) {
                     // Set damage instead of calling stack.damage, otherwise an animation is
                     // triggered for each damage tick.
